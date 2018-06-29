@@ -205,8 +205,8 @@
     
     // 1. 水平方向(列)
     // 1.1 左
-    if (colA != 0){//A点不在最左边
-        for (int i = colA - 1; i >= 0; i--) {
+//    if (colA != 0){//A点不在最左边
+        for (int i = colA - 1; i >= -1; i--) {
             pointC = CGPointMake(rowA, i);
             //判断C点是否为空
             if ([self.dict[NSStringFromCGPoint(pointC)] intValue] == 0) {
@@ -217,11 +217,11 @@
                 break;
             }
         }
-    }
+//    }
     
     // 1.2 右
-    if (colA != maxCol - 1){//A点不在最右边
-        for (int i = colA + 1; i < maxCol; i++) {
+//    if (colA != maxCol - 1){//A点不在最右边
+        for (int i = colA + 1; i <= maxCol; i++) {
             pointC = CGPointMake(rowA, i);
             //判断C点是否为空
             if ([self.dict[NSStringFromCGPoint(pointC)] intValue] == 0) {
@@ -232,12 +232,12 @@
                 break;
             }
         }
-    }
+//    }
     
     // 2. 垂直方向(行)
     // 2.1 上
-    if (rowA != 0){//A点不在最上边
-        for (int i = rowA - 1; i >= 0; i--) {
+//    if (rowA != 0){//A点不在最上边
+        for (int i = rowA - 1; i >= -1; i--) {
             pointC = CGPointMake(i, colA);
             //判断C点是否为空
             if ([self.dict[NSStringFromCGPoint(pointC)] intValue] == 0) {
@@ -248,11 +248,11 @@
                 break;
             }
         }
-    }
+//    }
     
     // 2.2 下
-    if (rowA != maxRow - 1){//A点不在最下边
-        for (int i = rowA + 1; i < maxRow; i++) {
+//    if (rowA != maxRow - 1){//A点不在最下边
+        for (int i = rowA + 1; i <= maxRow; i++) {
             pointC = CGPointMake(i, colA);
             //判断C点是否为空
             if ([self.dict[NSStringFromCGPoint(pointC)] intValue] == 0) {
@@ -263,7 +263,7 @@
                 break;
             }
         }
-    }
+//    }
     
     //其他情况
     return NO;
